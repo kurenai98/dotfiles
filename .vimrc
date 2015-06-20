@@ -1,14 +1,16 @@
 set nocompatible
 filetype off
 
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-    call neobundle#rc(expand('~/.vim/bundle/'))
-endif
+"---------------------------
+"" Start Neobundle Settings.
+"---------------------------
+" bundleで管理するディレクトリを指定
+set runtimepath+=~/.vim/bundle/neobundle.vim/
 
-" Let NeoBundle manage NeoBundle
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
 NeoBundleFetch 'Shougo/neobundle.vim'
-
 
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/Shougo/vim-vcs.git'
@@ -44,6 +46,8 @@ NeoBundle 'Shougo/unite-outline'
   NeoBundle 'therubymug/vim-pyte'
 " molokai カラースキーム
   NeoBundle 'tomasr/molokai'
+
+call neobundle#end()
 
 
 " ファイル形式別プラグインのロードを有効化
